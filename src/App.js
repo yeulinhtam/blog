@@ -1,11 +1,12 @@
 import PostContainer from './containers/PostContainer';
 import HomeContainer from './containers/HomeContainer';
+import CategoryContainer from './containers/CategoryContainer';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="app">
-      <PostContainer />
+      <CategoryContainer />
       <Footer />
     </div>
   );

@@ -1,11 +1,16 @@
-import { Avatar, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useState } from 'react';
+import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import Divider from '@material-ui/core/Divider';
+import './../../App.css';
 import RecentPostItem from './../RecentPosts/RecentPostItem';
 import Comment from './Comment';
-import PostComment from './PostComment';
-import ReadMore from './ReadMore';
 
 
 
@@ -18,39 +23,8 @@ const useStyles = makeStyles((theme) => ({
         color: "black",
         fontWeight: "600"
     },
-    image: {
-
-    },
-    info: {
-
-    },
-    share: {
-
-    },
-    commentContainer: {
-        marginTop: theme.spacing(1),
-    },
-    textUsername: {
-        color: "black",
-        fontWeight: 600
-    },
-    textComment: {
-
-    },
-    avatar: {
-        marginRight: theme.spacing(1),
-        width: theme.spacing(5),
-        height: theme.spacing(5),
-    },
-    action: {
-        fontSize: 13,
-        marginRight: theme.spacing(1),
-        padding: (2, 5),
-        borderRadius: 5,
-        cursor: "pointer",
-        '&:hover': {
-            background: "#f2eeed",
-        },
+    commentRoot:{
+        margin: theme.spacing(1,0)
     }
 }))
 
@@ -76,7 +50,24 @@ function Post(props) {
                                         <p>Voluptas dolores dignissimos dolorum temporibus, autem aliquam ducimus at officia adipisci quasi nemo a perspiciatis provident magni laboriosam repudiandae iure iusto commodi debitis est blanditiis alias laborum sint dolore. Dolores, iure, reprehenderit. Error provident, pariatur cupiditate soluta doloremque aut ratione. Harum voluptates mollitia illo minus praesentium, rerum ipsa debitis, inventore?</p>`}}>
                     </div>
                 </Grid>
-                <Grid item lg={12}>
+                <Divider light />
+                <Grid item lg={12} container justify="flex-end" alignItems="center" style={{ marginTop: 10, marginBottom: 10 }}>
+                     <Typography style={{ marginRight: 10 }} variant="h6">Share </Typography>
+                    <IconButton aria-label="delete" className={classes.socialIcon} style={{ color: "blue" }}>
+                        <FacebookIcon />
+                    </IconButton>
+                    <IconButton aria-label="delete" className={classes.socialIcon} style={{ color: "#1C9CEA" }}>
+                        <TwitterIcon />
+                    </IconButton>
+                    <IconButton aria-label="delete" className={classes.socialIcon} style={{ color: "black" }}>
+                        <GitHubIcon />
+                    </IconButton>
+                    <IconButton aria-label="delete" className={classes.socialIcon} style={{ color: "#EF4A5A" }}>
+                        <InstagramIcon />
+                    </IconButton>
+                </Grid>
+                <Divider light />
+                <Grid item lg={12} className={classes.commentRoot}>
                     <Typography>Comments (16)</Typography>
                 </Grid>
                 <Comment />
